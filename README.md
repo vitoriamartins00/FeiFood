@@ -44,9 +44,9 @@ python main.py
 # Estrutura do Projeto
 
 O projeto segue uma arquitetura modular, onde cada arquivo é responsável por um domínio específico:
-
+   
    -main.py: Controla o fluxo de navegação e inicializa o programa
-
+   
    -config.py: Armazena variáveis globais, listas de dados e constantes de menu
 
    -usuario.py: Gerencia o ciclo de vida do usuário (cadastro, login e exclusão)
