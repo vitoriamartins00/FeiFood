@@ -1,6 +1,6 @@
 # FEIFood: Plataforma de pedidos
 
-O Porjeto FEIFood consiste em uma plataforma de gerenciamento de pedidos de alimentos, desenvolvida em Python para a disciplina de Fund. de Algoritmos. O projeto simula o fluxo completo de um app de delivery, desde o cadastro até a avaliação e persistência dos dados em arquivos de texto.
+O Projeto FEIFood consiste em uma plataforma de gerenciamento de pedidos de alimentos, desenvolvida em Python para a disciplina de Fund. de Algoritmos. O projeto simula o fluxo completo de um app de delivery, desde o cadastro até a avaliação e persistência dos dados em arquivos de texto.
 
 # Func. Principais
 
