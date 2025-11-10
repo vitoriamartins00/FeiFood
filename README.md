@@ -45,11 +45,15 @@ python main.py
 
 O projeto segue uma arquitetura modular, onde cada arquivo é responsável por um domínio específico:
 
--main.py: Controla o fluxo de navegação e inicializa o programa
--config.py: Armazena variáveis globais, listas de dados e constantes de menu
--usuario.py: Gerencia o ciclo de vida do usuário (cadastro, login e exclusão)
--pedidos.py: Gerencia todas as transações, manipulação e persistência  dos pedidos
--cardapio.py: Define a lista de alimentos disponíveis e lógica de busca
+   -main.py: Controla o fluxo de navegação e inicializa o programa
+
+   -config.py: Armazena variáveis globais, listas de dados e constantes de menu
+
+   -usuario.py: Gerencia o ciclo de vida do usuário (cadastro, login e exclusão)
+
+   -pedidos.py: Gerencia todas as transações, manipulação e persistência  dos pedidos
+
+   -cardapio.py: Define a lista de alimentos disponíveis e lógica de busca
 
 
 # Autor
