@@ -1,6 +1,7 @@
 lista_usuarios = []
 lista_pedidos = []
 espaco = 100  
+prox_id_pedido = 1
 
 #menu da entrada / #dicionario que armazena as opções do menu principal (utilizado chave:valor - para facilitar a checagem)
 opcoes = {
@@ -24,4 +25,5 @@ opcao_gerenc_pedido ={
     1: "Editar",
     2: "Excluir",
     0: "Voltar"
+
 }
