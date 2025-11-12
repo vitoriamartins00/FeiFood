@@ -1,7 +1,7 @@
 from usuario import ler_usuarios, login_usuario, cadastro_usuario, remover_usuario
 from pedido import historico_pedido,criar_novo_pedido, gerenciamento_pedido, avaliar_pedido, calcular_total
 from cardapio import buscar_alimentos, exibir_cardapio, lista_alimentos
-from config import lista_usuarios, lista_pedidos,espaco, opcoes,opcoes_usuario, opcao_gerenc_pedido
+from config import lista_usuarios, lista_pedidos,espaco, opcoes,opcoes_usuario, opcao_gerenc_pedido, prox_id_pedido
 
 #funcao do menu apos o login do usuario 
 def menu_apos_login(usuario_logado):
@@ -79,4 +79,5 @@ def menuPrincipal():
 
 #inicializando o programa
 if __name__ == "__main__":
+
     menuPrincipal()
