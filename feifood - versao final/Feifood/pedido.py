@@ -1,11 +1,13 @@
-from config import lista_pedidos, espaco, opcao_gerenc_pedido
+from config import lista_pedidos, espaco, opcao_gerenc_pedido, prox_id_pedido
 
 from cardapio import lista_alimentos, exibir_cardapio
 
 #funcao que carrega os dados dos pedidos do arquivo para a lista 'lista_pedidos'
 def historico_pedido():
     global lista_pedidos #vamos modificar a lista global 
+    global prox_id_pedido
     lista_pedidos.clear()   #limpa a lista atual antes de carregar e evita duplicação
+    maior_id = 0
     try:
         with open('pedidos.txt', 'r') as pedidos:
             for linha in pedidos:
@@ -24,6 +26,9 @@ def historico_pedido():
                 valor_total_str = dados_pedido[2].strip()
                 avaliacao_pedido_str = dados_pedido[3].strip()
                 sacola_format =  dados_pedido[4].strip()
+
+                if id_pedido > maior_id:
+                    maior_id = id_pedido
 
                 try:
                     id_pedido = int(id_pedido_str)
@@ -77,6 +82,11 @@ def historico_pedido():
         pass
     except Exception as e:  #captura qualquer outro erro
         print(f"Erro ao carregar histórico de pedidos: {e}")
+
+    if maior_id == 0 and lista_pedido == []:
+        prox_id_pedido = 1
+    else:
+        prox_id_pedido = maior_id + 1
 
 
 #funcao para salvar os dados dos pedidos no arquivo
@@ -162,6 +172,7 @@ def remover_item(pedido):
 
 #funcao para criar um novo pedido   
 def criar_novo_pedido(usuario_logado):
+    global prox_id_pedido
     global lista_pedidos
     print(f"\n|{'Criar novo pedido':^{espaco}}|")
     itens_pedido = []   #cria lista temporaria para armazenar os itens do pedido
@@ -196,13 +207,14 @@ def criar_novo_pedido(usuario_logado):
     
     #dicionario do novo pedido
     novo_pedido = {
-        "id_pedido": len(lista_pedidos) + 1, #criando id do pedido com contador
+        "id_pedido": prox_id_pedido, #criando id do pedido com contador
         "id_usuario": usuario_logado['e-mail'], #acessando o usuario pelo e-mail para salvar avaliação
         "sacola": itens_pedido,
         "valor_total": total_final,
         "avaliacao": 0.0
     }
 
+    prox_id_pedido += 1
     lista_pedidos.append(novo_pedido) #adiciona o novo pedido a lista global
     salvar_pedido()                   #chama a funcao para salvar o pedido no arquivo
 
@@ -427,3 +439,4 @@ def gerenciamento_pedido(usuario_logado):
                 excluir_pedido(usuario_logado)  
         else:
             print("Opção inválida.")
+
